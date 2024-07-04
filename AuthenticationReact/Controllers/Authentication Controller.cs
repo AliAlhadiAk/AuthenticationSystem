@@ -217,7 +217,7 @@ namespace AuthenticationReact.Controllers
 
             // Update the refresh token in the database
             refreshToken.RefreshToken = newRefreshToken;
-            refreshToken.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7); // Set the new expiration date
+            refreshToken.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7); 
             //_appDbContext.Users.Update(refreshToken);
             await _appDbContext.SaveChangesAsync();
 
@@ -281,7 +281,7 @@ namespace AuthenticationReact.Controllers
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = new NetworkCredential(EmailSender.Email,EmailSender.Pass);
                 smtpClient.EnableSsl = true;
-                smtpClient.Port = 587; // or the appropriate port for your SMTP server
+                smtpClient.Port = 587; 
 
                 // Create the email message
                 var message = new MailMessage();
